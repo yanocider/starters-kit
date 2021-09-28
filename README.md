@@ -1,2 +1,2 @@
 # starters-kit
-環境開発のスターターキットです。
+The repository is a starter-kit for development environment.
