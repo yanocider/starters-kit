@@ -1,0 +1,82 @@
+@charset "utf-8";
+
+//* ----------------------------------------------------------------
+//    Color
+//----------------------------------------------------------------- *
+$color-main: #d00f31; // :メイン
+$color-sub: #f8b500; // :サブ
+$color-important: $color-main; // :重要
+$color-font: #2a2a2a; // :フォント
+$color-link: $color-font; // :リンク
+$color-link-hover: $color-main;
+$color-em: $color-font; // :強調
+$color-bg: #f1f1f1; // :背景
+$color-bg-02: #fcfcfc;
+$color-bg-03: #fff;
+$color-bg-04: #fbda7f;
+$color-bg-05: #f1b6c0;
+$color-bg-table: #fef0cc;
+$color-border: #bfbfbf; // :ボーダー
+
+//* ----------------------------------------------------------------
+//    Font
+//----------------------------------------------------------------- *
+$HiraginoKakuGo: "Hiragino Kaku Gothic Pro";
+
+$font-family: $HiraginoKakuGo, Meiryo, sans-serif;
+$font-unit: "rem";
+$font-size: 1.6;
+
+//* ----------------------------------------------------------------
+//    Line Height
+//----------------------------------------------------------------- *
+$line-height: 6px; // 行間
+
+//* ----------------------------------------------------------------
+//    Margin
+//----------------------------------------------------------------- *
+
+// todo: 未定義 (gutter-content済)
+
+$gutter: 32px; // ベースマージン
+$gutter-full: 30px; // line-heightなし要素 + line-heightなし要素の隣接時マージン
+$gutter-small: 24px; // スマホ幅のマージン
+$gutter-content: 20px; // スマホ幅の左右の余白
+$gutter-list: 40px;
+$gutter-list_ss: 32px;
+$gutter-lead: 40px;
+$gutter-lead_ss: 32px;
+$gutter-col: 64px;
+$gutter-col_ss: 40px;
+
+//* ----------------------------------------------------------------
+//    Container
+//----------------------------------------------------------------- *
+
+$container: 1160px;
+$container-small: 840px;
+
+//* ----------------------------------------------------------------
+//    Width
+//----------------------------------------------------------------- *
+
+// todo: 未定義
+
+$width-extra-small: 640px;
+$width-small: 767px;
+$width-medium: 860px;
+$width-wide: 910px;
+$width-extra-wide: 1036px;
+$width-max: 1304px;
+$width-header: $width-max;
+$width-content: 980px;
+$width-content-bp: $width-content + ($gutter-content * 2); // コンテンツ幅ブレークポイント
+
+//* ----------------------------------------------------------------
+//    Other
+//----------------------------------------------------------------- *
+$psd-font-size: $font-size * 10;
+$psd-line-space: 25.6;
+$psd-width: 1366px;
+$psd-small-width: 375px;
+$line-height: ($psd-line-space / $psd-font-size);

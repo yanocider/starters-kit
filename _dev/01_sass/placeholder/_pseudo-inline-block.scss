@@ -1,0 +1,9 @@
+@charset "utf-8";
+
+/* ----------------------------------------------------------------
+    Pseudo element (Inline Block)
+----------------------------------------------------------------- */
+%pseudo-inline-block {
+    content: "";
+    display: inline-block;
+}

@@ -1,0 +1,15 @@
+@charset "utf-8";
+
+// Presentation:
+// ロールオーバーをまとめて出力
+//
+// Example:
+// @include hover;
+//************************************************************************
+@mixin hover() {
+    &:hover,
+    &:active,
+    &:focus {
+        @content;
+    }
+}

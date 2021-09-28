@@ -1,0 +1,150 @@
+@charset "utf-8";
+
+@use "../core/setting" as set;
+@use "../mixin/import" as mx;
+
+/* ----------------------------------------------------------------
+    Base
+----------------------------------------------------------------- */
+:root {
+    font-size: 62.5%;
+}
+
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding: 117px 0 0;  // headerとの余白調整
+    background: set.$color-bg-03;
+    color: set.$color-font;
+    font-family: set.$font-family;
+    font-feature-settings: "palt";
+    font-size: #{set.$font-size} + #{set.$font-unit};
+    font-weight: 400;
+    line-height: set.$line-height;
+
+    //===== Media Queries =====
+    // headerとの余白調整
+    @include mx.rwd(1230px) {
+        padding-top: 235px;
+    }
+
+    //===== Media Queries =====
+    @include mx.rwd(ss) {
+        padding-top: 65px;
+        font-size: 1.5rem;
+    }
+}
+
+a {
+    color: set.$color-link;
+    text-decoration: underline;
+
+    &[class] {
+        text-decoration: none;
+    }
+
+    @include mx.hover() {
+        color: set.$color-link-hover;
+        text-decoration: none;
+    }
+}
+
+button {
+    cursor: pointer;
+}
+
+b,
+em {
+    color: set.$color-font;
+    font-style: normal;
+    font-weight: 700;
+}
+
+strong {
+    color: set.$color-important;
+    font-style: normal;
+    font-weight: 400;
+}
+
+img {
+    height: auto;
+    vertical-align: bottom;
+}
+
+p {
+    margin: 0 0 set.$gutter;
+
+    //===== Media Queries =====
+    @include mx.rwd(ss) {
+        margin-bottom: 18px;
+    }
+}
+
+ul,
+ol,
+dl {
+    margin: 0 0 set.$gutter-list;
+    padding: 0;
+
+    &[class] {
+        /* 既存のスタイルを残すためクラス指定時のみリセット */
+        list-style: none;
+    }
+
+    //===== Media Queries =====
+    @include mx.rwd(ss) {
+        margin-bottom: set.$gutter-list_ss;
+    }
+}
+
+dfn {
+    font-style: normal;
+}
+
+dd {
+    margin: 0;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+blockquote {
+    margin: 0;
+}
+
+iframe {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+input,
+select {
+    font-size: 1.6rem;
+    padding: 1px;
+}
+
+input[type="file"] {
+    width: 100%;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+}
+
+select::-ms-expand {
+    display: none;
+}
