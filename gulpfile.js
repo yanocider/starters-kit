@@ -8,7 +8,6 @@
  * project.browsers   [対象ブラウザ・OSの設定]
  */
 const project = {
-    server: 'starter-kit:8080',
     character: 'UTF-8',
     eol: '\n',
 };
@@ -151,7 +150,10 @@ function bSync() {
     'use strict';
 
     return browserSync.init({
-        proxy: project.server
+        server : {
+            baseDir : './',
+            index : 'index.html',
+        }
     });
 }
 
