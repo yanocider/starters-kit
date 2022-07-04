@@ -122,7 +122,6 @@ gulp.task('compileNewsSass', function () {
             order: 'smacss'
         })
     ]))
-    .pipe(gulp.dest(pathRoot + '/news/css/'))
     .pipe(browserSync.stream());
 });
 
