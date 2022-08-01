@@ -7,6 +7,8 @@
   "license": "UNLICENSED",
   "private": true,
   "scripts": {
+		"vlint:html": "vlint",
+		"vlint:css": "vlint --css",
     "start": "gulp",
     "sass": "gulp compileSass",
     "ejs": "gulp ejs"
