@@ -1,0 +1,10 @@
+html:
+    vnu: https://validator.w3.org/nu/
+    charset : utf-8
+    include : ' **/*.+(htm|html|shtml) '
+    ignore : - ' **/node_modules/** '
+css:
+    vnu: https://validator.w3.org/nu/
+    charset : utf-8
+    include : ' **/*.css '
+    ignore : - ' **/node_modules/** '

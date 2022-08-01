@@ -12,6 +12,7 @@
     "ejs": "gulp ejs"
   },
   "devDependencies": {
+    "@mitsue/vlint": "^0.8.1",
     "autoprefixer": "^10.3.6",
     "browser-sync": "^2.27.5",
     "css-declaration-sorter": "^6.1.3",
