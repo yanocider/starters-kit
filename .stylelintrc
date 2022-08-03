@@ -4,8 +4,8 @@
     "stylelint-prettier/recommended"
   ],
   "ignoreFiles": [
-    "dev/01_sass/core/_reset.scss",
-    "dev/01_sass/mixin/**/*.scss"
+    "_dev/01_sass/core/*.scss",
+    "_dev/01_sass/mixin/**/*.scss"
   ],
   "rules": {
     "color-hex-length": "short",

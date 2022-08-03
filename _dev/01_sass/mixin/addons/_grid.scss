@@ -2,7 +2,7 @@
 
 // Presentation:
 // マルチカラム（2カラムとか3カラムとか）のスタイルを生成する。
-//
+
 // Attributes:
 // $width-wrap: カラムを包容しているコンテンツの最大幅（px指定）
 // $gutter-col: 各カラム間のマージン（px指定）
@@ -11,74 +11,114 @@
 // $useAtRoot: セレクタがクラスか否か
 // $isAlignHeight: 高さを揃えるか否か
 // $max-width: max-widthの設定有無（IE11以下でflex-basisにborder-boxを含めた計算ができないときの回避策）
-//
+
 // Example:
 // @include grid-col(745px, 10px, 3);
 //************************************************************************
-@mixin grid-col($width-wrap, $gutter-col, $number-col, $target: ".grid_col", $useAtRoot: true, $isAlignHeight: false, $max-width: false) {
-    // 変数定義
-    $grid-margin: (($gutter-col / ($width-wrap + $gutter-col)) * 100%);
+@mixin grid-col(
+  $width-wrap,
+  $gutter-col,
+  $number-col,
+  $target: ".grid_col",
+  $useAtRoot: true,
+  $isAlignHeight: false,
+  $max-width: false
+) {
+  // 変数定義
+  $grid-margin: (($gutter-col / ($width-wrap + $gutter-col)) * 100%);
 
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: (-(($gutter-col / $width-wrap) * 100%));
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: (-(($gutter-col / $width-wrap) * 100%));
 
-    @if $useAtRoot == true {
-        @at-root {
-            @include grid-col-style($target, $grid-margin, $number-col, $isAlignHeight, $max-width);
-        }
+  @if $useAtRoot == true {
+    @at-root {
+      @include grid-col-style(
+        $target,
+        $grid-margin,
+        $number-col,
+        $isAlignHeight,
+        $max-width
+      );
     }
-
-    @else {
-        @include grid-col-style($target, $grid-margin, $number-col, $isAlignHeight, $max-width);
-    }
+  } @else {
+    @include grid-col-style(
+      $target,
+      $grid-margin,
+      $number-col,
+      $isAlignHeight,
+      $max-width
+    );
+  }
 }
 
-@mixin grid-col-adjust($width-wrap, $gutter-col, $number-col, $target: ".grid_col", $useAtRoot: true, $isAlignHeight: false, $max-width: false) {
-    // 変数定義
-    $grid-margin: (($gutter-col / ($width-wrap + $gutter-col)) * 100%);
+@mixin grid-col-adjust(
+  $width-wrap,
+  $gutter-col,
+  $number-col,
+  $target: ".grid_col",
+  $useAtRoot: true,
+  $isAlignHeight: false,
+  $max-width: false
+) {
+  // 変数定義
+  $grid-margin: (($gutter-col / ($width-wrap + $gutter-col)) * 100%);
 
-    margin-left: (-(($gutter-col / $width-wrap) * 100%));
+  margin-left: (-(($gutter-col / $width-wrap) * 100%));
 
-    @if $useAtRoot == true {
-        @at-root {
-            @include grid-col-style($target, $grid-margin, $number-col, $isAlignHeight, $max-width);
-        }
+  @if $useAtRoot == true {
+    @at-root {
+      @include grid-col-style(
+        $target,
+        $grid-margin,
+        $number-col,
+        $isAlignHeight,
+        $max-width
+      );
     }
-
-    @else {
-        @include grid-col-style($target, $grid-margin, $number-col, $isAlignHeight, $max-width);
-    }
+  } @else {
+    @include grid-col-style(
+      $target,
+      $grid-margin,
+      $number-col,
+      $isAlignHeight,
+      $max-width
+    );
+  }
 }
 
-@mixin grid-col-style($target, $grid-margin, $number-col, $isAlignHeight, $max-width) {
-    @if $target == false {
-        @if $isAlignHeight == true {
-            display: flex;
-            align-items: stretch;
-        }
-
-        margin-left: $grid-margin;
-        flex-basis: calc(#{100% / $number-col} - #{$grid-margin});
-
-        @if $max-width == true {
-            max-width: calc(#{100% / $number-col} - #{$grid-margin});
-        }
+@mixin grid-col-style(
+  $target,
+  $grid-margin,
+  $number-col,
+  $isAlignHeight,
+  $max-width
+) {
+  @if $target == false {
+    @if $isAlignHeight == true {
+      display: flex;
+      align-items: stretch;
     }
 
-    @else {
-        #{$target} {
-            @if $isAlignHeight == true {
-                display: flex;
-                align-items: stretch;
-            }
-            flex-basis: calc(#{100% / $number-col} - #{$grid-margin});
+    margin-left: $grid-margin;
+    flex-basis: calc(#{100% / $number-col} - #{$grid-margin});
 
-            margin-left: $grid-margin;
-
-            @if $max-width == true {
-                max-width: calc(#{100% / $number-col} - #{$grid-margin});
-            }
-        }
+    @if $max-width == true {
+      max-width: calc(#{100% / $number-col} - #{$grid-margin});
     }
+  } @else {
+    #{$target} {
+      @if $isAlignHeight == true {
+        display: flex;
+        align-items: stretch;
+      }
+      flex-basis: calc(#{100% / $number-col} - #{$grid-margin});
+
+      margin-left: $grid-margin;
+
+      @if $max-width == true {
+        max-width: calc(#{100% / $number-col} - #{$grid-margin});
+      }
+    }
+  }
 }
