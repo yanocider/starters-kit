@@ -1,0 +1,206 @@
+@charset "UTF-8";
+/*
+  https://github.com/andy-piccalilli/modern-css-reset/blob/master/LICENSE
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+body {
+  text-rendering: optimizeSpeed;
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+img,
+picture {
+  max-width: 100%;
+}
+
+picture {
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+*::before,
+*::after {
+    -webkit-animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+/* ----------------------------------------------------------------
+    Base
+----------------------------------------------------------------- */
+:root {
+  font-size: 62.5%;
+}
+
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-feature-settings: "palt";
+  padding: 117px 0 0;
+  background: #fff;
+  color: #2a2a2a;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.6;
+  font-family: "Hiragino Kaku Gothic Pro", Meiryo, sans-serif;
+}
+@media only screen and (max-width: 1230px) {
+  body {
+    padding-top: 235px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  body {
+    padding-top: 65px;
+    font-size: 1.5rem;
+  }
+}
+
+a {
+  color: #2a2a2a;
+  text-decoration: underline;
+}
+a[class] {
+  text-decoration: none;
+}
+a:hover, a:active, a:focus {
+  color: #d00f31;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+b,
+em {
+  color: #2a2a2a;
+  font-style: normal;
+  font-weight: 700;
+}
+
+strong {
+  color: #d00f31;
+  font-style: normal;
+  font-weight: 400;
+}
+
+img {
+  height: auto;
+  vertical-align: bottom;
+}
+
+p {
+  margin: 0 0 32px;
+}
+@media only screen and (max-width: 767px) {
+  p {
+    margin-bottom: 18px;
+  }
+}
+
+ul,
+ol,
+dl {
+  margin: 0 0 40px;
+  padding: 0;
+}
+ul[class],
+ol[class],
+dl[class] {
+  /* 既存のスタイルを残すためクラス指定時のみリセット */
+  list-style: none;
+}
+@media only screen and (max-width: 767px) {
+  ul,
+ol,
+dl {
+    margin-bottom: 32px;
+  }
+}
+
+dfn {
+  font-style: normal;
+}
+
+dd {
+  margin: 0;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+blockquote {
+  margin: 0;
+}
+
+iframe {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+input,
+select {
+  padding: 1px;
+  font-size: 1.6rem;
+}
+
+input[type=file] {
+  width: 100%;
+}
+
+fieldset {
+  margin: 0;
+  border: 0;
+}
+
+select::-ms-expand {
+  display: none;
+}

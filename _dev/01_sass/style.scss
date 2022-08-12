@@ -1,0 +1,25 @@
+@charset "utf-8";
+
+// Normalize.css
+@use "core/reset";
+
+// Base
+@use "core/base";
+
+// setting
+@use "core/setting";
+
+// mixin
+@use "mixin/import";
+
+// layout
+// @use "layout/content";
+// @use "layout/header";
+// @use "layout/footer";
+// @use "layout/navigation";
+
+// top
+// @use "module/top.scss";
+
+// module
+// @use "module/heading.scss";
