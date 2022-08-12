@@ -100,30 +100,6 @@ gulp.task('compileSass', function () {
         .pipe(gulp.dest(pathProd.css))
         .pipe(browserSync.stream());
 });
-gulp.task('compileNewsSass', function () {
-    'use strict';
-
-    return gulp.src(pathDev.sass + '/news/*.scss')
-    .pipe(plugins.dartSass({
-        outputStyle: 'expanded'
-    }))
-    .pipe(plugins.plumber()) // エラー時もファイル監視を続ける
-    .pipe(plugins.replace('UTF-8', project.character))
-    .pipe(plugins.replace(' \n', '\n'))
-    .pipe(plugins.eol(project.eol))
-    .pipe(plugins.convertEncoding({
-        to: project.character
-    }))
-    .pipe(plugins.postcss([
-        autoprefixer({
-            grid: true
-        }),
-        cssDeclarationSorter({
-            order: 'smacss'
-        })
-    ]))
-    .pipe(browserSync.stream());
-});
 
 /**
  * EJSコンパイル
