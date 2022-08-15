@@ -1,0 +1,28 @@
+<%
+const path = {
+  root: ''
+};
+const head = {
+  title: '○○○○',
+  description: '○○○○'
+};
+%>
+
+<!DOCTYPE html>
+<html>
+<head>
+<%- include(path.root + './_include/_head/_meta', {head: head}) %>
+<%- include(path.root + './_include/_head/_link', {}) %>
+</head>
+<body>
+<!--=============== Header =============== -->
+<%- include(path.root + './_include/_header/_index', {}) %>
+<!--=============== Header =============== -->
+<main>
+<p>ここにコンテンツ</p>
+</main>
+<!--=============== Footer =============== -->
+<%- include(path.root + './_include/_footer/_index', {}) %>
+<!--=============== Footer =============== -->
+</body>
+</html>
