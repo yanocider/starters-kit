@@ -43,7 +43,8 @@
     "stylelint-scss": "^4.3.0"
   },
   "lint-staged": {
-    "*.css": "stylelint --fix"
+		"**/*.html": "@mitsue/vlint",
+    "/_dev/01_sass/**/*.scss": "stylelint --fix"
   },
   "volta": {
     "node": "16.15.1",
